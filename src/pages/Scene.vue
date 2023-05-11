@@ -1,7 +1,5 @@
 <template>
   <q-page class="flex flex-center">
-    <div>Сцена</div>
-
     <div>
       <q-radio dense v-model="btn" val="action" label="Курсор" />
       <q-radio dense v-model="btn" val="position" label="Смещение" />
