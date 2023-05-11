@@ -1,11 +1,19 @@
 <template>
   <q-page class="flex flex-center">
-    <div>Scene</div>
+    <div>Сцена</div>
+
+    <div>
+      <q-radio dense v-model="btn" val="action" label="Курсор" />
+      <q-radio dense v-model="btn" val="position" label="Смещение" />
+      <q-radio dense v-model="btn" val="rotation" label="Вращение" />
+      <q-radio dense v-model="btn" val="scaling" label="Маштабирование" />
+    </div>
   </q-page>
 </template>
 
-<script>
-export default {};
-</script>
+<script setup>
+import { ref } from "@vue/runtime-core";
+import * as BABYLON from "babylonjs";
 
-<style></style>
+const btn = ref("action");
+</script>
