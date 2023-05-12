@@ -1,19 +1,3 @@
-<template>
-  <q-page class="flex flex-center">
-    <div>
-      <q-radio dense v-model="btn" val="action" label="Курсор" />
-      <q-radio dense v-model="btn" val="position" label="Смещение" />
-      <q-radio dense v-model="btn" val="rotation" label="Вращение" />
-      <q-radio dense v-model="btn" val="scaling" label="Маштабирование" />
-    </div>
-
-    <canvas ref="canvas" width="1000" height="700" />
-  </q-page>
-</template>
-
-<script setup>
-import { ref, onMounted } from "@vue/runtime-core";
-// import * as BABYLON from "babylonjs";
 import {
   Engine,
   Scene,
@@ -22,9 +6,6 @@ import {
   MeshBuilder,
   HemisphericLight,
 } from "babylonjs";
-
-const btn = ref("action");
-const canvas = ref(null);
 
 const createScene = (canvas) => {
   const engine = new Engine(canvas);
@@ -62,9 +43,4 @@ const createScene = (canvas) => {
   });
 };
 
-onMounted(() => {
-  if (canvas.value) {
-    createScene(canvas.value);
-  }
-});
-</script>
+export { createScene };
