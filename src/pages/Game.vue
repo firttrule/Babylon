@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "@vue/runtime-core";
+import { ref } from "@vue/runtime-core";
 import Scene from "../components/Scene.vue";
 
 const btn = ref("action");

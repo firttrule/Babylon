@@ -7,7 +7,12 @@ import {
   HemisphericLight,
 } from "babylonjs";
 
-const createScene = (canvas) => {
+
+const myScene = {
+  engine: null,
+  scene: null,
+
+createScene: function(canvas) {
   const engine = new Engine(canvas);
   const scene = new Scene(engine);
   const camera = new ArcRotateCamera(
@@ -41,6 +46,9 @@ const createScene = (canvas) => {
   engine.runRenderLoop(() => {
     scene.render();
   });
-};
+}
 
-export { createScene };
+}
+
+
+export { myScene };
